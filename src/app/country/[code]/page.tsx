@@ -34,11 +34,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `RestCountriesApp | ${country.name.common}`,
     description: `Short description for the country of ${country.name.common}${country.subregion ? ` located in the continent of ${country.subregion}.` : "."}`,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_URL}/country/${code}`,
+    },
     keywords: [],
     openGraph: {
       title: `RestCountriesApp | ${country.name.common}`,
       images: [country.flags.png],
       description: `Short description for the country of ${country.name.common}${country.subregion ? ` located in the continent of ${country.subregion}.` : "."}`,
+      siteName: "RestCountriesApp",
+      url: `${process.env.NEXT_PUBLIC_URL}/country/${code}`,
+      type: "website",
+      locale: "en_US",
     },
   };
 }
