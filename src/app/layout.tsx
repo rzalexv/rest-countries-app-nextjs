@@ -10,15 +10,16 @@ const nunito = Nunito_Sans({ subsets: ["latin"], weight: ["300", "600", "800"] }
 export const metadata: Metadata = {
   title: "RestCountriesApp | Home",
   description: "RestCountries App build with NextJS ",
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_URL}`),
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_URL,
+    canonical: "/",
   },
   openGraph: {
     title: "RestCountriesApp",
     description: "RestCountries App build with NextJS ",
-    url: process.env.NEXT_PUBLIC_URL,
+    url: "/",
     siteName: "RestCountriesApp",
-    images: [`${process.env.NEXT_PUBLIC_URL}/desktop-preview.jpg`],
+    images: [`/desktop-preview.jpg`],
     type: "website",
     locale: "en_US",
   },

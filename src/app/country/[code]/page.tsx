@@ -34,8 +34,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `RestCountriesApp | ${country.name.common}`,
     description: `Short description for the country of ${country.name.common}${country.subregion ? ` located in the continent of ${country.subregion}.` : "."}`,
+    metadataBase: new URL(`${process.env.NEXT_PUBLIC_URL}`),
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_URL}/country/${code}`,
+      canonical: `/country/${code}`,
     },
     keywords: [],
     openGraph: {
@@ -43,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [country.flags.png],
       description: `Short description for the country of ${country.name.common}${country.subregion ? ` located in the continent of ${country.subregion}.` : "."}`,
       siteName: "RestCountriesApp",
-      url: `${process.env.NEXT_PUBLIC_URL}/country/${code}`,
+      url: `/country/${code}`,
       type: "website",
       locale: "en_US",
     },
